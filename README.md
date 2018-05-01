@@ -1,6 +1,7 @@
 # Make_up
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class problem1 {
 
@@ -8,35 +9,30 @@ public class problem1 {
 		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
 		while (scan.hasNext()) {
-			LinkedList linkList2 = new LinkedList<Object>();
-			LinkedList linkList1 = new LinkedList<Object>();
-			LinkedList linkList0 = new LinkedList<Object>();
+			Stack myStack1 = new Stack ();
+			Stack myStack2 = new Stack ();
+			Stack myStack0 = new Stack ();
 
 			while (scan.hasNext()) {
 				int n = scan.nextInt();
 				switch (n) {
 				case 2:
-					linkList2.push(scan.nextLine());
+					myStack2.push(scan.nextLine());
 				case 1:
-					linkList1.push(scan.nextLine());
+					myStack1.push(scan.nextLine());
 				case 0:
-					linkList0.push(scan.nextLine());
+					myStack0.push(scan.nextLine());
 				}
 			}
 			for (int i = 0; i < 10; i++) {
-				if (linkList2.isEmpty())
-					linkList2.push(0);
-				if (linkList1.isEmpty())
-					linkList1.push(0);
-				if (linkList0.isEmpty())
-					linkList0.push(0);
-				System.out.println(linkList0.pop() + " " + linkList1.pop() + " " + linkList2.pop());
-				// if(linkList2.isEmpty()&&linkList1.isEmpty()&&linkList0.isEmpty())
-				// System.out.println("0 "+"0 "+"0");
-				// if(!linkList2.isEmpty()&&linkList1.isEmpty()&&linkList0.isEmpty())
-				// System.out.println("0"+" 0 "+linkList2.pop());
+				if (myStack2.isEmpty())
+					myStack2.push(0);
+				if (myStack1.isEmpty())
+					myStack1.push(0);
+				if (myStack0.isEmpty())
+					myStack0.push(0);
+				System.out.println(myStack0.pop() + " " + myStack1.pop() + " " + myStack2.pop());
 			}
-			linkList1.clear();linkList2.clear();linkList0.clear();
 		}
 	}
 }
